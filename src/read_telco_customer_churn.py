@@ -12,6 +12,3 @@ result = spark.sql("create schema if not exists test.telco_customer_churn")
 print(f"create schema: {result}")
 spark_df = spark.createDataFrame(df)
 spark_df.write.mode("overwrite").saveAsTable("test.telco_customer_churn.input_table")
-x = df.drop(columns=["Churn"])
-y = df["Churn"]
-# print(y.value_counts())
